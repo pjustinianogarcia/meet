@@ -1,0 +1,22 @@
+{
+  "name": "auth-server",
+  "version": "1.0.0",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pjustinianogarcia/meet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pjustinianogarcia/meet/issues"
+  },
+  "homepage": "https://github.com/pjustinianogarcia/meet#readme",
+  "description": "",
+  "dependencies": {
+    "googleapis": "^110.0.0"
+  }
+}

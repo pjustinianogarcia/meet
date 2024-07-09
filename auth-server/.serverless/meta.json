@@ -1,0 +1,179 @@
+{
+  "C:\\Users\\pjg_1\\Documents\\meet\\auth-server": {
+    "versionSfCore": null,
+    "versionFramework": "4.1.11",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeResolverProviders": {
+      "file": {
+        "instance": {
+          "credentials": "<REDACTED>",
+          "serviceConfigFile": {
+            "org": "pjustinianogarcia",
+            "service": "auth-server",
+            "provider": {
+              "name": "aws",
+              "runtime": "nodejs20.x",
+              "region": "eu-central-1",
+              "timeout": 30,
+              "environment": {
+                "CLIENT_ID": "369799403082-238v0jtiodgtf6it7nf12n23b8nq1vbg.apps.googleusercontent.com",
+                "CLIENT_SECRET": "<REDACTED>",
+                "CALENDAR_ID": "fullstackwebdev@careerfoundry.com"
+              },
+              "stage": "dev",
+              "versionFunctions": true
+            },
+            "functions": {
+              "getAuthURL": {
+                "handler": "handler.getAuthURL",
+                "events": [
+                  {
+                    "http": {
+                      "path": "api/get-auth-url",
+                      "method": "get"
+                    }
+                  }
+                ],
+                "name": "auth-server-dev-getAuthURL"
+              },
+              "getAccessToken": "<REDACTED>",
+              "getCalendarEvents": {
+                "handler": "handler.getCalendarEvents",
+                "events": [
+                  {
+                    "http": {
+                      "path": "api/get-events/{access_token}",
+                      "method": "get"
+                    }
+                  }
+                ],
+                "name": "auth-server-dev-getCalendarEvents"
+              }
+            }
+          },
+          "configFileDirPath": "C:\\Users\\pjg_1\\Documents\\meet\\auth-server",
+          "config": {
+            "type": "file"
+          },
+          "options": {},
+          "stage": "dev",
+          "dashboard": null
+        },
+        "resolvers": {}
+      }
+    },
+    "composeServiceName": null,
+    "servicePath": "C:\\Users\\pjg_1\\Documents\\meet\\auth-server",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "org": "pjustinianogarcia",
+      "service": "auth-server",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs20.x",
+        "region": "eu-central-1",
+        "timeout": 30,
+        "environment": {
+          "CLIENT_ID": "369799403082-238v0jtiodgtf6it7nf12n23b8nq1vbg.apps.googleusercontent.com",
+          "CLIENT_SECRET": "<REDACTED>",
+          "CALENDAR_ID": "fullstackwebdev@careerfoundry.com"
+        },
+        "stage": "dev",
+        "versionFunctions": true
+      },
+      "functions": {
+        "getAuthURL": {
+          "handler": "handler.getAuthURL",
+          "events": [
+            {
+              "http": {
+                "path": "api/get-auth-url",
+                "method": "get"
+              }
+            }
+          ],
+          "name": "auth-server-dev-getAuthURL"
+        },
+        "getAccessToken": "<REDACTED>",
+        "getCalendarEvents": {
+          "handler": "handler.getCalendarEvents",
+          "events": [
+            {
+              "http": {
+                "path": "api/get-events/{access_token}",
+                "method": "get"
+              }
+            }
+          ],
+          "name": "auth-server-dev-getCalendarEvents"
+        }
+      }
+    },
+    "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\r\norg: pjustinianogarcia\r\nservice: auth-server\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs20.x\r\n  region: eu-central-1\r\n  timeout: 30 \r\n  environment:\r\n    CLIENT_ID: ${file(config.json):CLIENT_ID}\r\n    CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}\r\n    CALENDAR_ID: ${file(config.json):CALENDAR_ID}\r\n\r\nfunctions:\r\n  getAuthURL:\r\n    handler: handler.getAuthURL\r\n    events:\r\n      - http:\r\n          path: api/get-auth-url\r\n          method: get\r\n\r\n  getAccessToken:\r\n    handler: handler.getAccessToken\r\n    events:\r\n      - http:\r\n          path: api/token/{code}\r\n          method: get\r\n\r\n  getCalendarEvents:\r\n    handler: handler.getCalendarEvents\r\n    events:\r\n      - http:\r\n          path: api/get-events/{access_token}\r\n          method: get",
+    "command": [
+      "info"
+    ],
+    "options": {},
+    "error": null,
+    "params": {},
+    "machineId": "dbfc2cf98d501140142556725f80dec6",
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "0e818079-f284-44ca-9735-5e538e636266",
+    "orgName": "pjustinianogarcia",
+    "userId": "7FNM5x9n8jNl0NkjHd",
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "userName": "pjustinianogarcia",
+    "subscription": null,
+    "userEmail": "Pjustinianogarcia@gmail.com",
+    "serviceProviderAwsCredentials": "<REDACTED>",
+    "serviceProviderAwsAccountId": "471112583019",
+    "versionSf": "4.1.11",
+    "serviceProviderAwsCfStackName": "auth-server-dev",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:eu-central-1:471112583019:stack/auth-server-dev/4ae4dd80-3c5e-11ef-b554-0a5be925e9dd",
+    "serviceProviderAwsCfStackCreated": "2024-07-07T12:41:55.360Z",
+    "serviceProviderAwsCfStackUpdated": "2024-07-09T12:17:06.298Z",
+    "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
+    "serviceProviderAwsCfStackOutputs": [
+      {
+        "OutputKey": "GetAccessTokenLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:eu-central-1:471112583019:function:auth-server-dev-getAccessToken:3",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-auth-server-dev-GetAccessTokenLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "GetAuthURLLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:eu-central-1:471112583019:function:auth-server-dev-getAuthURL:4",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-auth-server-dev-GetAuthURLLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "GetCalendarEventsLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:eu-central-1:471112583019:function:auth-server-dev-getCalendarEvents:2",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-auth-server-dev-GetCalendarEventsLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "ServiceEndpoint",
+        "OutputValue": "https://x39kujivql.execute-api.eu-central-1.amazonaws.com/dev",
+        "Description": "URL of the service endpoint",
+        "ExportName": "sls-auth-server-dev-ServiceEndpoint"
+      },
+      {
+        "OutputKey": "ServerlessDeploymentBucketName",
+        "OutputValue": "auth-server-dev-serverlessdeploymentbucket-wjiax7a4d391",
+        "ExportName": "sls-auth-server-dev-ServerlessDeploymentBucketName"
+      }
+    ]
+  }
+}
