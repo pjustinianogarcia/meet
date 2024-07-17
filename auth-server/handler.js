@@ -1,24 +1,23 @@
-'use strict';
+"use strict";
 
 const { google } = require("googleapis");
 const calendar = google.calendar("v3");
-const SCOPES = ["https://www.googleapis.com/auth/calendar.events.public.readonly"];
-const { CLIENT_SECRET, CLIENT_ID, CALENDAR_ID } = process.env;
-const redirect_uris = [
-
-  "https://pjustinianogarcia.github.io/meet/"
+const SCOPES = [
+  "https://www.googleapis.com/auth/calendar.events.public.readonly",
 ];
+const { CLIENT_SECRET, CLIENT_ID, CALENDAR_ID } = process.env;
+const redirect_uris = ["https://pjustinianogarcia.github.io/meet/"];
 
 const oAuth2Client = new google.auth.OAuth2(
   CLIENT_ID,
   CLIENT_SECRET,
-  redirect_uris[0]
+  redirect_uris[0] 
 );
 
 module.exports.getAuthURL = async () => {
   /**
    *
-   * Scopes array is passed to the `scope` option. 
+   * Scopes array is passed to the `scope` option.
    *
    */
   const authUrl = oAuth2Client.generateAuthUrl({
@@ -29,8 +28,8 @@ module.exports.getAuthURL = async () => {
   return {
     statusCode: 200,
     headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': true,
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": true,
     },
     body: JSON.stringify({
       authUrl,
@@ -55,60 +54,65 @@ module.exports.getAccessToken = async (event) => {
       return resolve(response);
     });
   })
-  .then((results) => {
-    // Respond with OAuth token 
-    return {
-      statusCode: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': true,
-      },
-      body: JSON.stringify(results),
-    };
-  })
-  .catch((error) => {
-    // Handle error
-    return {
-      statusCode: 500,
-      body: JSON.stringify(error),
-    };
-  });
+    .then((results) => {
+      // Respond with OAuth token
+      return {
+        statusCode: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": true,
+        },
+        body: JSON.stringify(results),
+      };
+    })
+    .catch((error) => {
+      // Handle error
+      return {
+        statusCode: 500,
+        body: JSON.stringify(error),
+      };
+    });
 };
 
 module.exports.getCalendarEvents = async (event) => {
-  const accessToken = decodeURIComponent(`${event.pathParameters.access_token}`);
+  const accessToken = decodeURIComponent(
+    `${event.pathParameters.access_token}`
+  );
 
   oAuth2Client.setCredentials({ access_token: accessToken });
 
   return new Promise((resolve, reject) => {
-    calendar.events.list({
-      calendarId: CALENDAR_ID,
-      auth: oAuth2Client,
-      timeMin: new Date().toISOString(),
-      singleEvents: true,
-      orderBy: 'startTime',
-    }, (error, response) => {
-      if (error) {
-        return reject(error);
-      }
-      const events = response.data.items;
-      return resolve(events);
-    });
-  })
-  .then((events) => {
-    return {
-      statusCode: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': true,
+    calendar.events.list(
+      {
+        calendarId: CALENDAR_ID,
+        auth: oAuth2Client,
+        timeMin: new Date().toISOString(),
+        singleEvents: true,
+        orderBy: "startTime",
       },
-      body: JSON.stringify({ events: events }),
-    };
+      (error, response) => {
+        if (error) {
+          return reject(error);
+        }
+        const events = response.data.items;
+        return resolve(events);
+      }
+    );
   })
-  .catch((error) => {
-    return {
-      statusCode: 500,
-      body: JSON.stringify(error),
-    };
-  });
+    .then((events) => {
+      return {
+        statusCode: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": true,
+        },
+        body: JSON.stringify({ events: events }),
+      };
+    })
+    .catch((error) => {
+      return {
+        statusCode: 500,
+        body: JSON.stringify(error),
+      };
+    });
 };
