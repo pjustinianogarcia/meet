@@ -1,7 +1,7 @@
 {
   "C:\\Users\\pjg_1\\Documents\\meet\\auth-server": {
     "versionSfCore": null,
-    "versionFramework": "4.1.12",
+    "versionFramework": "4.1.13",
     "isWithinCompose": false,
     "isCompose": false,
     "composeOrgName": null,
@@ -138,7 +138,7 @@
     "userEmail": "Pjustinianogarcia@gmail.com",
     "serviceProviderAwsCredentials": "<REDACTED>",
     "serviceProviderAwsAccountId": "471112583019",
-    "versionSf": "4.1.12",
+    "versionSf": "4.1.13",
     "serviceProviderAwsCfStackName": "auth-server-dev",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:eu-central-1:471112583019:stack/auth-server-dev/4ae4dd80-3c5e-11ef-b554-0a5be925e9dd",
     "serviceProviderAwsCfStackCreated": "2024-07-07T12:41:55.360Z",
