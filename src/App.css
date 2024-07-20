@@ -2,6 +2,7 @@
 
 body {
   font-family: 'Barlow', sans-serif;
+  font-weight: bold;
 }
 .App {
   text-align: center;
@@ -93,4 +94,13 @@ input[type="number"] {
   cursor: pointer;
   color: black;
   background-color: rgb(217, 217, 202);
+}
+
+.number-of-events {
+  background-color: #dcf2f2; /* Light yellow background color */
+  padding: 5px;
+  width: 50%;
+  border-radius: 4px;
+  margin: 0 auto; /* Center the box horizontally */
+  text-align: center; /* Center the text inside the box */
 }
