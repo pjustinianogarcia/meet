@@ -6,7 +6,7 @@ describe('<NumberOfEvents /> component', () => {
 
   beforeEach(() => {
     setNumberOfEventsMock = jest.fn();
-    render(<NumberOfEvents setNumberOfEvents={setNumberOfEventsMock} />);
+    render(<NumberOfEvents setNumberOfEvents={setNumberOfEventsMock} setErrorAlert={() => { }} />);
   });
 
   test('renders NumberOfEvents component', () => {

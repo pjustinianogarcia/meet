@@ -39,7 +39,13 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
       };
     
      
-    
+      const handleBlur = () => {
+        setTimeout(() => {
+          if (!document.activeElement.classList.contains('city')) {
+            setShowSuggestions(false);
+          }
+        }, 100);
+      };
     
 
     return (
@@ -50,6 +56,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
                 placeholder="Search for a city"
                 value={query}
                 onFocus={() => setShowSuggestions(true)}
+                
                 onChange={handleInputChanged}
       />
       {showSuggestions ?
