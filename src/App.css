@@ -105,6 +105,13 @@ input[type="number"] {
   text-align: center; /* Center the text inside the box */
 }
 
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px; /* Adjust the gap between the charts as needed */
+}
+
+
 .alerts-container {
   position: fixed;
   top: 0px;
@@ -118,4 +125,9 @@ input[type="number"] {
   .number-of-events {
     width: 80%; /* Adjust the width to fit within the container */
   }
+
+    .charts-container {
+      grid-template-columns: 1fr; /* Stack the charts in a single column on small screens */
+    }
+  
 }
