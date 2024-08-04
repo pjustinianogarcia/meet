@@ -7,7 +7,7 @@ body {
 .App {
   text-align: center;
   padding: 2% 5%;
-  background-color: #638a7c;
+  background-color: #dbf5f4;
 }
 
 .App * {
@@ -78,10 +78,23 @@ input[type="number"] {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 1px solid;
   border-radius: 4px;
   position: relative;
-  background-color: #dcf2f2;
+  background-color: #dfc2b0;
+  width: 100%; /* Ensure each event takes the full width of its grid cell */
+  max-width: 600px; 
+}
+
+#event-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+  gap: 20px; /* Space between columns */
+  justify-items: center; 
+}
+
+.event:hover {
+  background-color: #ddcec5;
 }
 
 .details-btn {
@@ -93,7 +106,11 @@ input[type="number"] {
   outline: none;
   cursor: pointer;
   color: black;
-  background-color: rgb(217, 217, 202);
+  background-color: #f28794;
+}
+
+.details-btn:hover {
+  background-color: #ffd4da;
 }
 
 .number-of-events {

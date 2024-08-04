@@ -38,7 +38,7 @@ const EventGenresChart = ({ events }) => {
     ) : null;
   };
 
-  const colors = ['#264BBA', '#83A6ED', '#8DD1E1', '#82CA9D', '#A4dE6C'];
+  const colors = ['#DDA280', '#3A837D', '#DE5969', '#D6B9A4', '#95C2BD'];
 
   return (
     <ResponsiveContainer width="99%" height={400}>
