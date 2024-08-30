@@ -1,3 +1,66 @@
+# Meet App
+Meet App is a React application designed to help users discover and manage events. It features a dynamic interface to search events by city, filter the number of events displayed, and visualize event data through charts.
+
+## Features
+City Search: Filter events by city.
+Event List: Display a list of events based on selected city and number of events.
+Charts: View charts representing event genres and city-specific events.
+Alerts: Display informational, error, and warning alerts.
+
+## Technologies
+React
+React Bootstrap
+CSS
+Custom Hooks
+Charts
+
+# Installation
+To set up the project locally, follow these steps:
+
+1. Clone the repository:
+
+git clone <repository-url>
+
+2. Navigate to the project directory:
+
+cd <project-directory>
+
+3. Install dependencies:
+
+npm install
+
+4. Start the development server:
+
+npm start
+
+5. Open the app in your browser:
+
+Visit http://localhost:3000 to see the app in action.
+
+# Usage
+
+City Search: Use the search input to select a city and view events specific to that location.
+Number of Events: Adjust the number of events displayed using the provided controls.
+Charts: View the Event Genres Chart and City Events Chart to analyze event data visually.
+
+# API
+
+The app fetches event data from an API endpoint. Ensure that the API is running and accessible.
+
+API Endpoint: https://example-api.com/events
+
+# Alerts
+
+The application supports the following alerts:
+
+Info Alert: Display informational messages.
+Error Alert: Display error messages.
+Warning Alert: Display warnings, such as offline status.
+
+# Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request on GitHub if you have suggestions or improvements.
+
 # meet
 # Objective
 To build a serverless, progressive web application (PWA) with React using a
